@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* Custom Screen Breakpoints */
+  --breakpoint-small: 320px;   /* Extra small devices / compact phones */
+  --breakpoint-mobile: 480px;  /* Standard mobile screens */
+  --breakpoint-tablet: 768px;  /* Tablets / iPads */
+  --breakpoint-web: 1024px;    /* Laptops / Desktop web screens */
+
+  /* Custom Brand Color Palette */
+  --color-primary: #10b981;        /* Vibrant Green */
+  --color-primary-dark: #047857;   /* Deep Green */
+
+  --color-secondary: #f97316;      /* Bright Orange */
+  --color-secondary-dark: #ea580c; /* Deep Orange */
+}
+
+/* Full Viewport Reset */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
