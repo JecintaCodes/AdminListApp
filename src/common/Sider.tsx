@@ -1,5 +1,10 @@
 // src/components/Sider.tsx
-import React, { createContext, useContext, useState,type ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+} from "react";
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import img from "../assets/hero.png";
 
@@ -22,19 +27,29 @@ export const Sider: React.FC<SiderProps> = ({ children }) => {
         <div>
           {/* Header & Toggle Button */}
           <div className="flex justify-between items-center pb-4 mb-4 border-b border-gray-100">
-            <span
-              className={`overflow-hidden transition-all duration-300 font-black text-xl text-emerald-700 tracking-tight whitespace-nowrap ${
-                expanded ? "w-28 opacity-100" : "w-0 opacity-0"
-              }`}
-            >
-              OBM Admin
-            </span>
+            {expanded ? (
+              <span
+                className={`overflow-hidden transition-all duration-300 font-black text-xl text-emerald-700 tracking-tight whitespace-nowrap ${
+                  expanded ? "w-28 opacity-100" : "w-0 opacity-0"
+                }`}
+              >
+                OBM Admin
+              </span>
+            ) : (
+              <span className=" text-emerald-700 text- font-semibold ">
+                OBM
+              </span>
+            )}
             <button
               type="button"
               onClick={() => setExpanded((curr) => !curr)}
               className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition-colors cursor-pointer flex items-center justify-center shrink-0"
             >
-              {expanded ? <ChevronFirst size={20} /> : <ChevronLast size={20} />}
+              {expanded ? (
+                <ChevronFirst size={20} />
+              ) : (
+                <ChevronLast size={20} />
+              )}
             </button>
           </div>
 
@@ -58,7 +73,9 @@ export const Sider: React.FC<SiderProps> = ({ children }) => {
             }`}
           >
             <div className="leading-tight truncate">
-              <h4 className="font-bold text-xs text-gray-900 truncate">Jacinta</h4>
+              <h4 className="font-bold text-xs text-gray-900 truncate">
+                Jacinta
+              </h4>
               <span className="text-emerald-700 font-medium text-[11px] truncate block">
                 admin@boundarymarket.com
               </span>

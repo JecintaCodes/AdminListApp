@@ -19,7 +19,7 @@ export const AdminLayout: React.FC = () => {
 
   const navItems = [
     { text: "Dashboard", icon: <LayoutDashboard size={20} />, path: "/admin" },
-    { text: "Lists", icon: <ShoppingBag size={20} />, path: "/admin/lists" },
+    { text: "List Histroy", icon: <ShoppingBag size={20} />, path:"list-histroy" },
     { text: "Products", icon: <ShoppingBag size={20} />, path: "/admin/products" },
     { text: "Orders", icon: <ListOrdered size={20} />, path: "/admin/orders", alert: true },
     { text: "Categories", icon: <Grid size={20} />, path: "/admin/categories" },
