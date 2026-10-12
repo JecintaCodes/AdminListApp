@@ -83,11 +83,17 @@ export const ListHistory: React.FC = () => {
   const [copiedRef, setCopiedRef] = useState<string | null>(null);
 console.log(setHistory)
   // Copy reference number helper
-  const handleCopyRef = (refNum: string) => {
+  // const handleCopyRef = (refNum: string) => {
+  //   navigator.clipboard.writeText(refNum);
+  //   setCopiedRef(refNum);
+  //   setTimeout(() => setCopiedRef(null), 2000);
+  // };
+
+  const handleCopyRef = (refNum:string)=>{
     navigator.clipboard.writeText(refNum);
     setCopiedRef(refNum);
-    setTimeout(() => setCopiedRef(null), 2000);
-  };
+    setTimeout(()=>setCopiedRef(null),2000)
+  }
 
   // Filter records based on search query
   const filteredHistory = history.filter((record) => {
@@ -99,6 +105,7 @@ console.log(setHistory)
       record.referenceNumber.toLowerCase().includes(q)
     );
   });
+
 
   return (
     <div className="w-full max-w-7xl mx-auto p-2 mobile:p-4 tablet:p-6 space-y-6">
@@ -139,7 +146,7 @@ console.log(setHistory)
       {/* History Table */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse min-w-[900px]">
+          <table className="w-full text-left border-collapse min-w-225">
             <thead>
               <tr className="border-b border-gray-100 text-[11px] font-extrabold uppercase text-gray-400 tracking-wider">
                 <th className="py-4 px-6">Reference No</th>
@@ -188,7 +195,7 @@ console.log(setHistory)
                         <Phone size={11} className="shrink-0" />
                         {record.customerPhoneNumber}
                       </div>
-                      <div className="text-[11px] text-gray-500 flex items-center gap-1.5 truncate max-w-[180px]">
+                      <div className="text-[11px] text-gray-500 flex items-center gap-1.5 truncate max-w-45">
                         <Mail size={11} className="shrink-0" />
                         {record.customerEmail}
                       </div>
@@ -200,7 +207,7 @@ console.log(setHistory)
                     <div className="font-extrabold text-gray-800">
                       {record.items.length} Unique Items
                     </div>
-                    <div className="text-[11px] text-gray-400 truncate max-w-[200px]">
+                    <div className="text-[11px] text-gray-400 truncate max-w-50">
                       {record.items.map((i) => i.itemName).join(", ")}
                     </div>
                   </td>

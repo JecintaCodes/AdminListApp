@@ -10,9 +10,9 @@ import {
   Tag,
   Settings,
   Bell,
+  BookAIcon,
 } from "lucide-react";
 import Sider, { SiderItem } from "./Sider";
-
 export const AdminLayout: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,9 +21,11 @@ export const AdminLayout: React.FC = () => {
     { text: "Dashboard", icon: <LayoutDashboard size={20} />, path: "/admin" },
     { text: "List Histroy", icon: <ShoppingBag size={20} />, path:"list-histroy" },
     { text: "Products", icon: <ShoppingBag size={20} />, path: "/admin/products" },
-    { text: "Orders", icon: <ListOrdered size={20} />, path: "/admin/orders", alert: true },
+    { text: "Order Histroy", icon: <ListOrdered size={20} />, path: "order-histroy", alert: true },
     { text: "Categories", icon: <Grid size={20} />, path: "/admin/categories" },
-    { text: "Vendors & Users", icon: <Users size={20} />, path: "/admin/users" },
+    { text: "Services", icon: <Grid size={20} />, path: "/services" },
+    { text: " Users", icon: <Users size={20} />, path: "users" },
+    { text: "Ledger", icon: <BookAIcon size={20} />, path: "customer-ledger" },
     { text: "Discounts & Promos", icon: <Tag size={20} />, path: "/admin/promos" },
     { text: "Notifications", icon: <Bell size={20} />, path: "/admin/notifications" },
     { text: "Settings", icon: <Settings size={20} />, path: "/admin/settings" },
